@@ -1,0 +1,8 @@
+a = float (input(' Digite o valor do primeiro produto:'))
+b = float (input('Digite o valor do segundo produto:'))
+c = float (input('Digite o valor do terceiro produto:'))
+d = float (input('Digite o valor do quarto produto:'))
+e = float (input('Digite o valor do quinto produto:'))
+valor = int(input('Digite a quantia em dinheiro:'))
+troco =valor-(a+b+c+d+e)
+print(f"O troco a ser recebido é {troco:.2f}")
