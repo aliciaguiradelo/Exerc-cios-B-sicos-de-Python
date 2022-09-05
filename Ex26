@@ -1,0 +1,5 @@
+n = float(input("Digite um número qualquer:"))
+if (n>0):
+    print("É positivo! O resultado é:%f", n*2 )
+else:
+    print("É negativo!O resultado é:%F", n*3)
