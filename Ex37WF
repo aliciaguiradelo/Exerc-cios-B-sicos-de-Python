@@ -1,0 +1,14 @@
+numero = int(input("Digite um número:"))
+
+while (numero <=0):
+    print("Não pode números negativos, apenas positivos.")
+    numero = int(input("Digite um novo número:"))
+a = int(input("Digite o início do intervalo:"))
+b = int(input("Digite o fim do intervalo:"))
+
+while(b<=a):
+    print("É necessário que o valor de B seja maiior que A")
+    b = int(input("Digite o final do intervalo novamente:"))
+for i in range(b,a-1, -1):
+    t = numero * i 
+    print(numero, "x", i, "=", t)
