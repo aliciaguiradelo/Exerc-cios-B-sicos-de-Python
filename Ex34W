@@ -1,0 +1,7 @@
+print("TABUADA DO NÚMERO 5!")
+i=0
+while(i<=10):
+    t = 5 * i
+    i=i+1
+    print(f"5 X {i} = {t}")
+print("FIM")

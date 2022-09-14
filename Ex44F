@@ -1,0 +1,11 @@
+
+for i in range(1,11,1):
+    numero=int(input("Digite um numero:"))
+    while(numero<0):
+        numero=int(input("Digite outro numero:"))
+    if(i==1):
+        maior=numero
+    elif(n>maior):
+        maior=numero
+    for s in range(s,s+numero, numero):
+        

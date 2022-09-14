@@ -1,0 +1,15 @@
+i=1
+soma=0
+numero=int(input("Digite um numero:"))
+while(numero<=0):
+    numero=int(input("Digite outro numero:"))
+while(i<=10):
+    if(i==1):
+        maior = numero
+    elif (numero>maior):
+        maior=numero
+soma=soma+numero
+meida=soma/10
+print("O maior é:", maior)
+print("A soma é:", soma)
+print("A média é:", media)
