@@ -9,7 +9,7 @@ elif (a>c) and (c>b):
 elif (b>c) and (c>a):
   print("A sequência é:%.2f<%.2f<%.2f" %(a,c,b))
 elif (b>a) and (a>c):
-  print("A sequência é:%.2f<%.2f<%.2f" %(c,b,a))
+  print("A sequência é:%.2f<%.2f<%.2f" %(c,a,b))
 elif (c>a) and (a>b):
   print("A sequência é:%.2f<%.2f<%.2f" %(b,a,c))
 else:

@@ -1,4 +1,4 @@
-n = int (input("Digite um numero qualquer:"))
+n = int (input("Digite um numero positivo:"))
 
 while (n<0):
   print("Numero negativo é invalido!")

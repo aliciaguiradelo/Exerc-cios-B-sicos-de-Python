@@ -1,0 +1,20 @@
+soma=0
+maior=0
+i=int(input("Digite a quantidade de número:"))
+while(i<=0 and i<20):
+    i=int(input("Digite novamente:"))
+i=1
+while(i<i+1):
+    n=int(input("Digite um número:"))
+    while(n<0):
+        n=int(input("Digite outro numero:"))
+    if(i==1):
+        maior = n
+    elif (n>maior):
+        maior=n
+    soma=soma+n
+    i=i+1
+    media=soma/10
+print("O maior é:", maior)
+print("A soma é:", soma)
+print("A média é:", media)

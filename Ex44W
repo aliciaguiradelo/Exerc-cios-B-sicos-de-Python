@@ -1,15 +1,16 @@
 i=1
 soma=0
-numero=int(input("Digite um numero:"))
-while(numero<=0):
-    numero=int(input("Digite outro numero:"))
 while(i<=10):
+    n=int(input("Digite um número:"))
+    while(n<0):
+        n=int(input("Digite outro numero:"))
     if(i==1):
-        maior = numero
-    elif (numero>maior):
-        maior=numero
-soma=soma+numero
-meida=soma/10
+        maior = n
+    elif (n>maior):
+        maior=n
+    soma=soma+n
+    i=i+1
+    media=soma/10
 print("O maior é:", maior)
 print("A soma é:", soma)
 print("A média é:", media)

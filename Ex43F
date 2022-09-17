@@ -1,8 +1,0 @@
-n = int(input("Digite um valor n:"))
-while(n<=0 and n>50):
-    print("Digite um valor n válido:")
-for n in range(1,51,1):
-    cima=n
-    baixo=(n*n*n)
-    print(cima, "/", baixo)
-   

@@ -1,10 +1,12 @@
 cima=1
 baixo=2
-i=1
+soma=0
 n = int(input("Digite um valor n:"))
-while(n<=0 and n>50):
+while((n<0) and (n>50)):
     print("Digite um valor n válido:")
-while(i<=n):
-    baixo=cima+1
-    i=i+1
-    print(cima, "/", baixo)
+
+cima=n
+baixo=n+1
+soma=(((1/2)+(cima/baixo))*n)/2
+print("O termo", n, "é",cima, "/", baixo)
+print("A soma é:", soma)

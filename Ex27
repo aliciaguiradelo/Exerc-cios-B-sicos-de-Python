@@ -1,5 +1,5 @@
 n = float(input("Digite um número qualquer:"))
 if (n%2==0):
-    print("O resultado é:", n+5 )
+    print("É um número par e o resultado é:", n+5 )
 else:
-    print("O resultado é:", n+8)
+    print("É um número impar e o resultado é:", n+8)

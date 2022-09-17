@@ -1,5 +1,0 @@
-n = input("Digite seu nome:")
-s = input("Digte seu sexo:")
-estado = input("Digite seu estado civil:")
-
-print(n,"você está casada há quantos anos?")
