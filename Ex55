@@ -1,24 +1,23 @@
-r = "S"
-numeros = []
+novamente = "s"
+valores = []
 
-while(r=="S"):
-    quant = int(input('Quantidade de números que serão digitados: '))
-    while(quant < 0 or quant >=20):
-        print('Opa! Não pode números negativos e quantidade deve ser menor que 20')
-        quant = int(input('Quantidade de números que serão digitados: '))
-    for i in range(0, quant, 1):
-        num = int(input('Digite um número: '))
-        numeros.append(num)
+qnt = int(input("Digite a quantidade de valors a serem digitados:"))
+while(qnt<=0 or qnt>20):
+    print("Opa! O limite é até 20!")
+    qtd = int(input("Digite a quantidade de valores a serem digitados:"))
+for i in range(0,qnt,1):
+    x = int(input("Digite um valor:"))
+    valores.append(x)
+while(novamente =="s"):
+    num = int(input("Digite um número para ser localizado no array:"))
+    pos = -1
 
-    posicao = int(input("Digite o valor para saber sua posição:"))
-
-    for i in range(0,quant,1):
-        if (numeros[i]== posicao):
-            posi = i
-        if posi != -1:
-            print("Esse número está na posição", posi)
-        else:
-            print("Valor não encontrado")
-    r=input("Você deseja realizar uma nova execução?(S/N):").upper()
-    while(r!="S" and r!="N"):
-        r=input("Digite uma resposta válida:").upper()
+    for i in range(0, qnt,1):
+        if (valores[i]==num):
+            pos=i
+    if(pos!=-1):
+        print("O valor foi encontrado na posição:", pos)
+    else:
+        print("Valor não encontrado")
+    novamente=input("Deseja realizar uma nova consulta?(S/N):")
+print("Obrigada!")
