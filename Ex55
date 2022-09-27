@@ -11,6 +11,7 @@ for i in range(0,qnt,1):
 while(novamente =="s"):
     num = int(input("Digite um número para ser localizado no array:"))
     pos = -1
+    print("Lembrando que as posições começam com o 0!")
 
     for i in range(0, qnt,1):
         if (valores[i]==num):
