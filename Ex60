@@ -1,0 +1,4 @@
+valores = []
+for i in range(0,10,1):
+    v=input(f"Digite o {i + 1} valor :")
+    valores.append(v)
