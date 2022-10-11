@@ -4,9 +4,9 @@ for i in range(0,10,1):
     valores.append(v)
 for i in range(0,10,1):
     for j in range(i+1,10,1):
-        if(valores[i]>valores[j]):
+        if(valores[i]<valores[j]):
             aux = valores[i]
             valores[i] = valores[j]
             valores[j] = aux
 for i in range(0,10,1):
-    print(valores[i],">")
+    print(valores[i],"<")
