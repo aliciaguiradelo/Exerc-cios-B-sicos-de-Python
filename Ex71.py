@@ -1,37 +1,51 @@
-print("RESERVA ÔNIBUS PARA LAS VEGAS")
+print("______RESERVA ÔNIBUS PARA LAS VEGAS______")
 
-matriz = [ [0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0] ]
+#Inicializando variáveis
+onibus = []
+retornar = "S"
+lotacao = 0
 
-resposta = 'S'
+#Instanciando as linhas da matriz:
+for i in range (0,10,1):
+    onibus.append([])
 
-while resposta == 'S':
+#Instanciando as colunas de array para cada linha de array:
+for l in range(0,10,1):
+    for c in range(0,4,1):
+        onibus[l].append("-----")
 
+#Enquanto o usuário quiser realizar um novo cadastro, o programa volta a partir desse ponto. Entrada de dados do usuário:
+while (retornar=="S"):
     nome=input("Digite seu nome: ")
+    fileira=int(input("Digite a fileira desejada (0 a 10): "))-1
+    cadeira=int(input("Digite a cadeira desejada (0 a 4): "))-1
 
-    fileira = int(input("Digite o número da fileira desejada: "))
-    while(fileira>4):
-        fileira = int(input("O ônibus possui apenas 4 fileiras. Digite um valor válido: : "))
-    cadeira = int(input("Digite o número da cadeira desejada: "))
-    while(cadeira>10):
-        cadeira = int(input("O ônibus possui apenas 10 cadeiras por fileira. Digite um valor válido: "))
+    #Garantindo que os valores de fileira e cadeira sejam válidos:
+    while(fileira>10) or (fileira<0) or (cadeira>4) or (cadeira<0):
+        fileira=int(input("Digite a fileira desejada (0 a 10): "))-1
+        cadeira=int(input("Digite a cadeira desejada (0 a 4): "))-1
+    
+    #Caso o lugar escolhido esteja ocupado, receberá aviso:
+    while(onibus[fileira][cadeira]!=("-----")):
+        print=("Este lugar já está ocupado!")
+        fileira=int(input("Digite a fileira desejada (0 a 10): "))-1
+        cadeira=int(input("Digite a cadeira desejada (0 a 4): "))-1
+    
+    #Caso o lugar esteja vago, realizar reserva:
+    onibus[fileira][cadeira]=nome
+    lotacao=lotacao+1
+    print("Reserva realizada com sucesso! ")
+    for i in range(0,10,1):
+        print(onibus[i])
+    
+    #Conferindo se ainda há vagas no ônibus:
+    if(lotacao<41):
+        retornar=input("Deseja realizar uma nova reserva? (S/N) ").upper()
+    else:
+        print("O ônibus está cheio! Bora! ")
 
-    for i in range (0,fileira,1):
-        matriz.append([])
-
-    for f in range (0,fileira,1):
-        for c in range (0,cadeira,1):
-            if( matriz[f][c] is None):
-                matriz[fileira][cadeira]=nome
-                for i in range(0,fileira,1):
-                    print(matriz[i])
-                
-            else:
-                print("Este assento está ocupado!")
-            resposta = input("Você deseja reservar mais algum lugar? ").upper()
-            resposta = resposta[0]
-while resposta != "S" and resposta != "N" :
-        resposta = input("Digite sim ou não. ").upper()
-        resposta = resposta[0]
-if resposta == "N":
-        for f in range(0, fileira, 1):
-            print(matriz[f])
+#Caso o usuário não quiser realizar uma nova reserva, mostrar o mapa das posições:
+print("Mapa das reservas do ônibus:")
+for i in range(0,10,1):
+    print(onibus[i])
+print("Reservas concluídas com sucesso! ")
