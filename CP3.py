@@ -42,7 +42,8 @@ while (retornar=="S"):
     if(limite<41):
         retornar=input("Deseja realizar uma nova consulta? (S/N) ").upper()
     else:
-        print("O ônibus está cheio! Bora! ")
+        print("A sala está cheia! ")
+        retornar= "N"
 
 #Caso o aluno não quiser realizar uma nova consulta ao mapa da sala, mostrar o mapa das posições:
 print("-------MAPA DE SALA------")

@@ -43,6 +43,7 @@ while (retornar=="S"):
         retornar=input("Deseja realizar uma nova reserva? (S/N) ").upper()
     else:
         print("O ônibus está cheio! Bora! ")
+        retornar="N"
 
 #Caso o usuário não quiser realizar uma nova reserva, mostrar o mapa das posições:
 print("Mapa das reservas do ônibus:")
