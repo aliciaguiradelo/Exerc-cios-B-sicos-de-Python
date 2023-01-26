@@ -87,7 +87,7 @@ while(retornar=="s"):
     #Caso ainda tenha lugar em pelo menos uma sessão, pergunto se o usuário deseja realizar uma nova consulta:
     else:
         retornar = input("Deseja realizar mais alguma reserva? (S/N)")
-
+retornar="N"
 #Print do cadastro final
 print("Mapa das reservas do show separados por período:")
 #MANHA
