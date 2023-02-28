@@ -26,4 +26,3 @@ if response.status_code == 200:
 #Caso o status não seja 200, ou seja, caso tenha sido mal sucedido
 else:
     print("CEP não encontrado.")
-    
