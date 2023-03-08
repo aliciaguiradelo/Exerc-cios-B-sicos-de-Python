@@ -3,6 +3,11 @@ import requests
 listaPessoas = []
 
 while True:
+    #Definindo funções
+    def exibirPessoas (pessoa):
+        for pessoa in listaPessoas:
+            print(f"\n\nId: {pessoa['id']} \nNome: {pessoa['nome']} \nEndereço: {pessoa['logradouro']}\n\n")
+
     print("Cadastro de Pessoas")
     print("\n1 - Incluir \n2 - Alterar \n3 - Excluir \n4 - Exibir \n5 - Sair \n")
     opcao = int(input("Digite a opção desejada: "))
@@ -35,8 +40,7 @@ while True:
         print('Pessoa cadastrada com sucesso!')
 
     elif (opcao == 2):
-        for pessoa in listaPessoas:
-            print(f"\n\nId: {pessoa['id']} \nNome: {pessoa['nome']} \nEndereço: {pessoa['logradouro']}\n\n")
+        print(exibirPessoas(pessoa))
 
         idPessoa = int(input('Digite o id da pessoa que deseja atualizar: '))
         nome = input('Digite o novo nome: ')
@@ -50,8 +54,7 @@ while True:
         print('Pessoa atualizada com sucesso!')
         
     elif (opcao == 3):
-        for pessoa in listaPessoas:
-            print(f"\n\nId: {pessoa['id']} \nNome: {pessoa['nome']} \nEndereço: {pessoa['logradouro']}\n\n")
+        print(exibirPessoas(pessoa))
 
         idPessoa = int(input('Digite o id da pessoa que deseja atualizar: '))
 
@@ -60,7 +63,6 @@ while True:
                 listaPessoas.remove(pessoa)
 
     elif (opcao == 4):
-        for pessoa in listaPessoas:
-            print(f"\n\nId: {pessoa['id']} \nNome: {pessoa['nome']} \nEndereço: {pessoa['logradouro']}\n\n")
+        print(exibirPessoas(pessoa))
     else:
         break

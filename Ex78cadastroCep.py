@@ -4,6 +4,10 @@ import requests
 ListaPessoas = []
 
 while True:
+    #Definindo funções
+    def exibirPessoas (pessoa):
+        for pessoa in listaPessoas:
+            print(f"\n\nId: {pessoa['id']} \nNome: {pessoa['nome']} \nEndereço: {pessoa['logradouro']}\n\n")
     print("Cadastro de Pessoas")
     print("\n1 - Incluir \n2 - Alterar \n3 - Excluir \n4 - Exibir \n5 - Sair \n")
     opcao = int(input("Digite a opção desejada: "))
@@ -40,9 +44,7 @@ while True:
             print("CEP não encontrado.")
 
     elif (opcao == 2):
-        for pessoa in ListaPessoas:
-            print(f"\nNome: {pessoa['Nome']} \nIdade: {pessoa['Idade']} \nCEP: {pessoa['Cep']} \nLogradouro: {pessoa['Logradouro']} \nNúmero: {pessoa['Número']} \nComplemento: {pessoa['Complemento']} \nBairro: {pessoa['Bairro']} \nCidade: {pessoa['Cidade']} \nEstado: {pessoa['Estado']}")
-
+        print(exibirPessoas(pessoa))
         nomePessoa = input ("Digite o nome que deseja alterar: ")
         idade = int (input ("Digite a nova idade: "))
         cep = input("Digite seu novo CEP: ")
@@ -83,13 +85,13 @@ while True:
             print("CEP não encontrado.")
 
     elif (opcao == 3):
+        print(exibirPessoas(pessoa))
         nomePessoa = input ("Digite o nome que deseja excluir: ")
         for pessoa in ListaPessoas:
             if (pessoa['Nome'] == nomePessoa):
                 ListaPessoas.remove(pessoa)
 
     elif (opcao == 4):
-        for pessoa in ListaPessoas:
-            print(f"\nNome: {pessoa['Nome']} \nIdade: {pessoa['Idade']} \nCEP: {pessoa['Cep']} \nLogradouro: {pessoa['Logradouro']} \nNúmero: {pessoa['Número']} \nComplemento: {pessoa['Complemento']} \nBairro: {pessoa['Bairro']} \nCidade: {pessoa['Cidade']} \nEstado: {pessoa['Estado']}")
+        print(exibirPessoas(pessoa))
     else:
         break
