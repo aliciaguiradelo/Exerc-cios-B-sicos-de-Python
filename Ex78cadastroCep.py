@@ -1,13 +1,9 @@
-#Importando biblioteca para trabalhar com API
-import requests
+from utils import ApiCep as ac 
 #Criando ArrayList para armazenar o cadastro das pessoas
 ListaPessoas = []
 
 while True:
-    #Definindo funções
-    def exibirPessoas (pessoa):
-        for pessoa in listaPessoas:
-            print(f"\n\nId: {pessoa['id']} \nNome: {pessoa['nome']} \nEndereço: {pessoa['logradouro']}\n\n")
+    
     print("Cadastro de Pessoas")
     print("\n1 - Incluir \n2 - Alterar \n3 - Excluir \n4 - Exibir \n5 - Sair \n")
     opcao = int(input("Digite a opção desejada: "))
