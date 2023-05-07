@@ -1,0 +1,4 @@
+ari,anzol,10.00
+ari,molinete,300.00
+rede,2,50,molinete,300.00
+rede,2,50,base,50.00

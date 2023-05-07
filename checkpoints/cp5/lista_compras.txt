@@ -1,0 +1,7 @@
+ari
+anzol,10,1
+molinete,2,150
+rede,2,50
+alicia
+base,1,50
+rimel,2,10
