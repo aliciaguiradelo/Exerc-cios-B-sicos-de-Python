@@ -2,7 +2,7 @@ import cx_Oracle
 
 def connect_to_database():
     dsn = cx_Oracle.makedsn(host='oracle.fiap.com.br', port=1521, sid='ORCL')
-    conn = cx_Oracle.connect(user='rm96960', password='180201', dsn=dsn)
+    conn = cx_Oracle.connect(user='rm96384', password='200494', dsn=dsn)
     return conn
 
 def cadastrar_categoria():
@@ -10,7 +10,7 @@ def cadastrar_categoria():
     cursor = conn.cursor()
     id = input('Digite o ID: ')
     descricao = input('Digite a descrição da categoria: ')
-    cursor.execute("INSERT INTO TB_CATEGORIA (ID_CAT, DESCRICAO) VALUES (:valor1, :valor2)",valor1=id, valor2=descricao)
+    cursor.execute("INSERT INTO CATEGORIA (ID_CAT, DESCRICAO) VALUES (:valor1, :valor2)",valor1=id, valor2=descricao)
     conn.commit()
     print('Registro incluído com sucesso!')
     cursor.close()
@@ -19,7 +19,7 @@ def cadastrar_categoria():
 def listar_categorias():
     conn = connect_to_database()
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM TB_CATEGORIA')
+    cursor.execute('SELECT * FROM CATEGORIA')
     rows = cursor.fetchall()
     for row in rows:
         print(row)
@@ -33,7 +33,7 @@ def atualizar_categoria():
     cursor = conn.cursor()
     id = input('Digite o ID que deseja atualizar: ')
     descricao = input('Digite a nova descrição: ')
-    cursor.execute("UPDATE TB_CATEGORIA SET DESCRICAO=:valor1 WHERE ID_CAT=:valor2",valor1=descricao, valor2=id)
+    cursor.execute("UPDATE CATEGORIA SET DESCRICAO=:valor1 WHERE ID_CAT=:valor2",valor1=descricao, valor2=id)
     conn.commit()
     print('Registro alterado com sucesso!')
     cursor.close()
@@ -43,12 +43,12 @@ def remover_categoria():
     conn = connect_to_database()
     cursor = conn.cursor()
     id = input('Digite o ID que deseja excluir: ')
-    cursor.execute("SELECT * FROM TB_CATEGORIA WHERE ID_CAT=:valor1", valor1=id)
+    cursor.execute("SELECT * FROM CATEGORIA WHERE ID_CAT=:valor1", valor1=id)
     row = cursor.fetchone()
     if row is None:
         print('O ID informado não existe na tabela.')
     else:
-        cursor.execute("DELETE FROM TB_CATEGORIA WHERE ID_CAT=:valor1", valor1=id)
+        cursor.execute("DELETE FROM CATEGORIA WHERE ID_CAT=:valor1", valor1=id)
         conn.commit()
         print('Registro excluído com sucesso!')
     cursor.close()
@@ -59,7 +59,7 @@ def cadastrar_setor():
     cursor = conn.cursor()
     id = input('Digite o ID: ')
     descricao = input('Digite a descrição do setor: ')
-    cursor.execute("INSERT INTO TB_SETOR (ID_SET, DESCRICAO) VALUES (:valor1, :valor2)",valor1=id, valor2=descricao)
+    cursor.execute("INSERT INTO SETOR (ID_SETOR, DESCRICAO) VALUES (:valor1, :valor2)",valor1=id, valor2=descricao)
     conn.commit()
     print('Registro incluído com sucesso!')
     cursor.close()
@@ -68,7 +68,7 @@ def cadastrar_setor():
 def listar_setor():
     conn = connect_to_database()
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM TB_SETOR')
+    cursor.execute('SELECT * FROM SETOR')
     rows = cursor.fetchall()
     for row in rows:
         print(row)
@@ -82,7 +82,7 @@ def atualizar_setor():
     cursor = conn.cursor()
     id = input('Digite o ID que deseja atualizar: ')
     descricao = input('Digite a nova descrição: ')
-    cursor.execute("UPDATE TB_SETOR SET DESCRICAO=:valor1 WHERE ID_SET=:valor2",valor1=descricao, valor2=id)
+    cursor.execute("UPDATE SETOR SET DESCRICAO=:valor1 WHERE ID_SETOR=:valor2",valor1=descricao, valor2=id)
     conn.commit()
     print('Registro alterado com sucesso!')
     cursor.close()
@@ -92,12 +92,12 @@ def remover_setor():
     conn = connect_to_database()
     cursor = conn.cursor()
     id = input('Digite o ID que deseja excluir: ')
-    cursor.execute("SELECT * FROM TB_SETOR WHERE ID_SET=:valor1", valor1=id)
+    cursor.execute("SELECT * FROM SETOR WHERE ID_SETOR=:valor1", valor1=id)
     row = cursor.fetchone()
     if row is None:
         print('O ID informado não existe na tabela.')
     else:
-        cursor.execute("DELETE FROM TB_SETOR WHERE ID_SET=:valor1", valor1=id)
+        cursor.execute("DELETE FROM SETOR WHERE ID_SETOR=:valor1", valor1=id)
         conn.commit()
         print('Registro excluído com sucesso!')
     cursor.close()
